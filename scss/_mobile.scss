@@ -1,9 +1,15 @@
 // Wide screens
 @include mediaXl {
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 // desktop and aptops
 @include mediaLg {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 // Tablets and small laptops
@@ -28,12 +34,12 @@
   }
   .menu-nav {
     height: 65vh;
-    transform: translate3d(-100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
   }
 
   .menu-branding {
     height: 35vh;
-    transform: translate3d(100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
 
     .portrait {
       background: url("../img/portraitSm.jpg");
@@ -41,11 +47,28 @@
       height: 150px;
     }
   }
+  .about-info {
+    grid-template-areas:
+      "bioimage"
+      "bio"
+      "job1"
+      "job2"
+      "job3";
+
+    grid-template-columns: 1fr;
+  }
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 // smartphones
 @include mediaSm {
   main#home h1 {
     margin-top: 10 vh;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
   }
 }
